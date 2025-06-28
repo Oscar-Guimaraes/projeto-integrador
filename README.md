@@ -15,7 +15,7 @@ No sistema prisional, visitas são essenciais para o bem-estar e reintegração 
 - Bootstrap 5
 - JavaScript
 - HTML + JSX
-=======
+
 # Projeto Integrador 🚀
 
 Sistema desenvolvido com **React + Vite**.
@@ -25,7 +25,6 @@ Sistema desenvolvido com **React + Vite**.
 - Vite
 - Bootstrap 5
 - Git & GitHub
->>>>>>> 0a3cf198646c47aafdbc4964af8cddfb3d5dfa6a
 
 ## ⚙️ Instalação
 ```bash
