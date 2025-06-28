@@ -8,13 +8,13 @@ A plataforma visa inovar e otimizar as visitas às internas do Estabelecimento P
 No sistema prisional, visitas são essenciais para o bem-estar e reintegração social, mas barreiras como transporte escasso e burocracia limitam seu acesso. Este projeto desenvolve uma plataforma web para facilitar visitas virtuais, conectando internas e familiares. A relevância do tema no desenvolvimento web está na criação de soluções acessíveis e responsivas.
 
 ### Tela de Login
-![Tela de Login](docs/prints/loginPage.png)
+![Tela de Login](docs/prints/LoginPage.png)
 
 ### Tela de Agendamento
 ![Tela de Agendamento](docs/prints/AgendamentoPage.png)
 
 ### Tela de Cadastro
-![Tela de Login](docs/prints/logCadastroPage.png)
+![Tela de Login](docs/prints/CadastroPage.png)
 
 ## 🔧 Tecnologias Utilizadas
 
