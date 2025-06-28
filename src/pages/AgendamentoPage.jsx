@@ -176,6 +176,7 @@ export default function AgendamentoPage() {
           <p className="mb-1">
             {`© ${new Date().getFullYear()} AGEPEN/MS - Todos os direitos reservados | Versão: 1.0.0`}
           </p>
+          <p>teste</p>
         </footer>
       </div>
     </div>
