@@ -160,7 +160,8 @@ export default function AgendamentoPage() {
                 </>
               )}
 
-              <div className="text-center mt-3">
+              <div className="d-flex justify-content-between mt-3">
+                <button className="btn btn-outline-secondary px-4" onClick={() => navigate('/')}>CANCELAR</button>
                 <button className="btn btn-primary px-4" onClick={agendar}>AGENDAR</button>
               </div>
             </div>
@@ -176,7 +177,6 @@ export default function AgendamentoPage() {
           <p className="mb-1">
             {`© ${new Date().getFullYear()} AGEPEN/MS - Todos os direitos reservados | Versão: 1.0.0`}
           </p>
-          <p>teste</p>
         </footer>
       </div>
     </div>
