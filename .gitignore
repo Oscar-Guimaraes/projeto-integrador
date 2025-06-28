@@ -9,8 +9,16 @@ lerna-debug.log*
 
 node_modules
 dist
+<<<<<<< HEAD
 dist-ssr
 *.local
+=======
+.evn
+.vite
+.DS-DS_Store
+# dist-ssr
+# *.local
+>>>>>>> 0a3cf198646c47aafdbc4964af8cddfb3d5dfa6a
 
 # Editor directories and files
 .vscode/*
