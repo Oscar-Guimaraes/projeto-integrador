@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS Agendamento CASCADE;
 DROP TABLE IF EXISTS Interna CASCADE;
 DROP TABLE IF EXISTS Familiar CASCADE;
 DROP TABLE IF EXISTS Unidade CASCADE;
+DROP TABLE IF EXISTS Gestor CASCADE;
 
 -- Tabela UNIDADE (prisões)
 CREATE TABLE Unidade (
@@ -46,4 +47,13 @@ CREATE TABLE Agendamento (
   id_familia INT REFERENCES Familiar(id_familia) ON DELETE CASCADE,
   id_interna INT REFERENCES Interna(id_interna) ON DELETE CASCADE,
   CONSTRAINT unique_agendamento UNIQUE (data, horario, id_familia, id_interna)
+);
+
+CREATE TABLE Gestor (
+  id_gestor SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  cpf VARCHAR(11) UNIQUE NOT NULL CHECK (cpf ~ '^[0-9]{11}$'),
+  telefone VARCHAR(15) NOT NULL CHECK (telefone ~ '^[0-9]{10,11}$'),
+  email VARCHAR(100) UNIQUE NOT NULL CHECK (email ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
+  senha VARCHAR(100) NOT NULL
 );
