@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Navbar from '../components/Navbar';
+
+
 const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
@@ -15,8 +18,8 @@ export default function AgendamentoPage() {
   const [internaSelecionada, setInternaSelecionada] = useState('Laura Isabella Morales');
 
   const internas = [
-    { nome: 'Laura Isabella Morales', rgi: '145236', parentesco: 'Esposa' },
-    { nome: 'Ana Valentina Morales', rgi: '145236', parentesco: 'Cunhada' }
+    { nome: 'Maria da Conceição', rgi: '45612378900', parentesco: 'Esposa' },
+    { nome: 'Lúcia Ferreira', rgi: '32178965400', parentesco: 'Filha' }
   ];
 
   const todosHorarios = [
@@ -118,7 +121,7 @@ export default function AgendamentoPage() {
 
               <table className="table table-bordered small">
                 <thead className="table-light">
-                  <tr><th>NOME</th><th>RGI</th><th>PARENTESCO</th></tr>
+                  <tr><th>NOME</th><th>CPF</th><th>PARENTESCO</th></tr>
                 </thead>
                 <tbody>
                   {internas.map((item, index) => (

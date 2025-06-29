@@ -1,21 +1,14 @@
+DROP TABLE IF EXISTS Agendamento CASCADE;
+DROP TABLE IF EXISTS Interna CASCADE;
+DROP TABLE IF EXISTS Familiar CASCADE;
+DROP TABLE IF EXISTS Unidade CASCADE;
+
 -- Tabela UNIDADE (prisões)
 CREATE TABLE Unidade (
   id_unidade SERIAL PRIMARY KEY,
   nome VARCHAR(100) NOT NULL UNIQUE,
   cidade VARCHAR(50) NOT NULL,
-  endereco TEXT,
-  
--- Tabela INTERNA (detentas)
-CREATE TABLE Interna (
-  id_interna SERIAL PRIMARY KEY,
-  nome VARCHAR(100) NOT NULL,
-  cpf VARCHAR(11) UNIQUE NOT NULL CHECK (cpf ~ '^[0-9]{11}$'),
-  nascimento DATE,
-  cidade VARCHAR(50),
-  estado CHAR(2) DEFAULT 'MS' CHECK (estado IN ('MS', 'MT', 'SP')),
-  parentesco VARCHAR(50) NOT NULL CHECK (parentesco IN ('Filha', 'Neta', 'Nora', 'Esposa', 'Cunhada')),
-  id_familia INT REFERENCES Familiar(id_familia) ON DELETE CASCADE,
-  id_unidade INT REFERENCES Unidade(id_unidade) ON DELETE CASCADE
+  endereco TEXT    
 );
 
 -- Tabela FAMILIAR (visitantes)
@@ -30,6 +23,19 @@ CREATE TABLE Familiar (
   telefone VARCHAR(15) NOT NULL CHECK (telefone ~ '^[0-9]{10,11}$'),
   email VARCHAR(100) UNIQUE NOT NULL CHECK (email ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
   senha VARCHAR(100) NOT NULL
+);
+
+-- Tabela INTERNA (detentas)
+CREATE TABLE Interna (
+  id_interna SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  cpf VARCHAR(11) UNIQUE NOT NULL CHECK (cpf ~ '^[0-9]{11}$'),
+  nascimento DATE,
+  cidade VARCHAR(50),
+  estado CHAR(2) DEFAULT 'MS' CHECK (estado IN ('MS', 'MT', 'SP')),
+  parentesco VARCHAR(50) NOT NULL CHECK (parentesco IN ('Filha', 'Neta', 'Nora', 'Esposa', 'Cunhada')),
+  id_familia INT REFERENCES Familiar(id_familia) ON DELETE CASCADE,
+  id_unidade INT REFERENCES Unidade(id_unidade) ON DELETE CASCADE
 );
 
 -- Tabela AGENDAMENTO
