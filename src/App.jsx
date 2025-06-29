@@ -8,6 +8,10 @@ export default function LoginPage() {
     alert('Redirecionando para a página de cadastro...');
   };
 
+fetch('http://localhost:3001/api/familiares')
+  .then(res => res.json())
+  .then(data => console.log(data));
+
   return (
     <div className="container mt-5">
       {/* Logo e título */}
